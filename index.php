@@ -1,63 +1,42 @@
 <?php session_start(); ?>
+
+<?php
+if(!isset($_SESSION['valid'])) {
+    header('Location: login.php');
+}
+?>
+
+<?php
+//including the database connection file
+include_once("connection.php");
+
+//fetching data in descending order (lastest entry first)
+$result = mysqli_query($mysqli, "SELECT * FROM tareas WHERE login_id=".$_SESSION['id']." ORDER BY id DESC");
+?>
+
 <html>
 <head>
-    <title>Login</title>
+    <title>Todo List</title>
 </head>
 
 <body>
-<?php
-include("connection.php");
-
-if(isset($_POST['submit'])) {
-    $user = mysqli_real_escape_string($mysqli, $_POST['username']);
-    $pass = mysqli_real_escape_string($mysqli, $_POST['password']);
-
-    if($user == "" || $pass == "") {
-        echo "<center>Usuario y Comtraseña Vacio.";
-        echo "<br/>";
-        echo "<br/>";
-        echo "<a href='login.php'>Volver</a>";
-    } else {
-        $result = mysqli_query($mysqli, "SELECT * FROM login WHERE username='$user' AND password=md5('$pass')")
-        or die("ERROR.");
-		
-        $row = mysqli_fetch_assoc($result);
-		
-        if(is_array($row) && !empty($row)) {
-            $validuser = $row['username'];
-            $_SESSION['valid'] = $validuser;
-            $_SESSION['name'] = $row['name'];
-            $_SESSION['id'] = $row['id'];
-        } else {
-            echo "<center>Usuario o Contraseña Incorrecto.";
-            echo "<br/>";
-            echo "<br/>";
-            echo "<a href='login.php'>Volver</a>";
-        }
-
-        if(isset($_SESSION['valid'])) {
-            header('Location: index.php');			
-        }
+<a href="index.php">Home</a> | <a href="add.html">Add New Data</a> | <a href="logout.php">Logout</a>
+<br/><br/>
+	
+<table>
+    <tr>
+        <td>id</td>
+        <td>Tarea</td>
+        <td>Accion</td>
+    </tr>
+    <?php
+    while($res = mysqli_fetch_array($result)) {		
+        echo "<tr>";
+        echo "<td>".$res['id']."</td>";
+        echo "<td>".$res['name']."</td>";	
+        echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
     }
-} else {
-?>
-    <form name="form1" method="post" action="">
-    <h1>Login</h1>
-        <table>
-             Usuario
-             <br>
-                <input type="text" name="username">
-             <br>
-             Contraseña
-             <br>
-                <input type="password" name="password">
-            <br>
-                <td><input type="submit" name="submit" value="Submit"></td>
-            
-        </table>
-    </form>
-<?php
-}
-?>
+    ?>
+</table>	
 </body>
 </html>
