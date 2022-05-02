@@ -9,7 +9,7 @@
   <div class='register'>
   <center>
   <h1>Inice Seción</h1>
-  
+  usuario<br>
   <input type="text" name="" placeholder="usuario">
   <br><br />
   <input type="password" name="" placeholder="contraseña">
