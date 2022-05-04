@@ -11,7 +11,7 @@ CREATE TABLE `login` (
     PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB;
 
-CREATE TABLE `products` (
+CREATE TABLE `tareas` (
     `id` int(11) NOT NULL auto_increment,
     `name` varchar(100) NOT NULL,
     `login_id` int(11) NOT NULL,
