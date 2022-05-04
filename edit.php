@@ -48,8 +48,8 @@ while($res = mysqli_fetch_array($result))
 </head>
 
 <body>
-    <button class="l"><a href="index.php">Volver</a></button>
-    <button> <a href="logout.php">Cerrar Secion</a></button>
+    <a href="index.php"><button class="l">Home</button></a>
+    <a href="logout.php"><button>Cerrar Secion</button></a>
     <br/><br/>
     
     <form name="form1" method="post" action="edit.php" class="container">
@@ -57,7 +57,7 @@ while($res = mysqli_fetch_array($result))
                     <h1>Editar Tarea</h1>
                     <input type="text" name="name" value="<?php echo $name;?>"class="q">
                     <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
-                    <input type="submit" name="update" value="Actualizar" >
+                    <input class="r" type="submit" name="update" value="Actualizar" >
                 </div>
     </form>
 </body>
