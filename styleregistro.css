@@ -21,6 +21,15 @@ button{
     margin-top: -20px;
     width: 260;
 }
+
+.in{
+    width: 100px;
+    height: 40px;
+    background-color:black;
+    border-color: red;
+    color: aliceblue;
+}
+
 .t{
     margin-top: 10px;
 }
@@ -33,6 +42,6 @@ div{
 }
 
 a{
-    margin-left: 150px;
-    text-decoration-color: red;
+    margin-left: 80px;
+    color: red;
 }

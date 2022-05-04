@@ -7,36 +7,42 @@ if(!isset($_SESSION['valid'])) {
 ?>
 
 <?php
-//including the database connection file
 include_once("connection.php");
 
-//fetching data in descending order (lastest entry first)
 $result = mysqli_query($mysqli, "SELECT * FROM tareas WHERE login_id=".$_SESSION['id']." ORDER BY id DESC");
 ?>
 
 <html>
 <head>
+    <html lang="es">
     <title>Todo List</title>
+    <link rel="stylesheet" type="text/css" href="styleindex.css">
 </head>
 
 <body>
-<a href="index.php">Home</a> | <a href="add.html">Add New Data</a> | <a href="logout.php">Logout</a>
+<a href="logout.php"><button class="t">Cerrar Sesion</button></a>
 <br/><br/>
-	
-<table>
-    <tr>
-        <td>id</td>
-        <td>Tarea</td>
-        <td>Accion</td>
-    </tr>
-    <?php
-    while($res = mysqli_fetch_array($result)) {		
-        echo "<tr>";
-        echo "<td>".$res['id']."</td>";
-        echo "<td>".$res['name']."</td>";	
-        echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
-    }
-    ?>
-</table>	
+<div class="container">
+        <table width='100%' border=0>
+            <tr>
+                <td><h1>id</h1></td>
+                <td><h1>Tarea</h1></td>
+                <td width="30%"><h1>Accion</h1></td>
+            </tr>
+            <?php
+
+            while($res = mysqli_fetch_array($result)) {		
+                echo "<tr>";
+                echo "<td>".$res['id']."</td>";
+                echo "<td>".$res['name']."</td>";	
+                echo "<td><a href=\"edit.php?id=$res[id]\"><button>Editar</button></a>  <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Deseas eliminar la tarea?')\"><button>Eliminar</button></a></td>";		
+            }
+            ?>
+        </table>
+        
+</div>
+    <a href="agregar.html">
+        <button class="r">Nueva Tarea</button>
+    </a>
 </body>
 </html>

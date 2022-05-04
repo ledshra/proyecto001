@@ -47,7 +47,7 @@
                     <h2 class="lab">Contraseña</h2>
                     <input type="password" name="password" class="r" placeholder="Contraseña">
                 <div>
-                    <input type="submit" name="submit" value="enviar">
+                    <input class="in" type="submit" name="submit" value="Registrar">
                     <a href="index.php">Login</a>
                 </div>
             </div>

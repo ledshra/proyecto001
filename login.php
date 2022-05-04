@@ -58,7 +58,7 @@ if(isset($_POST['submit'])) {
                 <input type="password" name="password" placeholder="Contraseña">
             <br>
             <br>
-                <td><input type="submit" name="submit" value="Login"></td>
+                <td><input class="in" type="submit" name="submit" value="Login"></td>
                 <td><a href="registro.php">Ir a Registro</a></td>
     </div>
     </form>

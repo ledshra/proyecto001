@@ -7,7 +7,6 @@ if(!isset($_SESSION['valid'])) {
 ?>
 
 <?php
-// including the database connection file
 include_once("connection.php");
 
 if(isset($_POST['update']))
@@ -15,7 +14,6 @@ if(isset($_POST['update']))
     $id = $_POST['id'];
     $name = $_POST['name'];
 	
-    // checking empty fields
     if(empty($name)) {				
         if(empty($name)) {
             echo "<font color='red'>Name field is empty.</font><br/>";
@@ -30,10 +28,8 @@ if(isset($_POST['update']))
 }
 ?>
 <?php
-//getting id from url
 $id = $_GET['id'];
 
-//selecting data associated with this particular id
 $result = mysqli_query($mysqli, "SELECT * FROM tareas WHERE id=$id");
 
 while($res = mysqli_fetch_array($result))
