@@ -7,11 +7,12 @@ Al aver descargado el .zip del proyecto
 almacenar el archivo descomprimido en la carpeta htdocs
 del xampp.
 
-#Pasos para la ejecucion
+# Pasos para la ejecucion
+
 Activar los servicios de apache y mysql en xampp control panel
 luego:
 
-##Paso 1
+## Paso 1
 Crear la base de datos en mysql del servidor de xampp
 > http://localhost//phpmyadmin
 
@@ -41,37 +42,37 @@ CREATE TABLE `tareas` (
 ) ENGINE=InnoDB;
 ```
 
-##Paso 2
+## Paso 2
 Abrir en el navegador la carpeta del poryecto
 > http://localhost/proyecto001-master/
 
 
-#Pasos para el uso de la pagina todo-list
+# Pasos para el uso de la pagina todo-list
 Despues de aver ejecutado correctamente las anteriores pasos ahora seguimos con el uso de la pagina creada.
 
-##Paso 1
+## Paso 1
 Registrarte con:
 + Nombre
 + Email
 + Usuario
 + Contraseña
 
-##Paso 2
+## Paso 2
 Luego de aver registrado corectamente, iniciar seción
 con el:
 + usuario
 + contraseña.
 
 |Usuario
-|-------------
-|`Usuario`
-|**Contraseña**
-|`Contraseña`
-|![](https://simg.nicepng.com/png/small/281-2819748_how-to-set-use-login-button-clipart-button.png)
+|-------------|
+|`Usuario`|
+|**Contraseña**|
+|`Contraseña`|
+|![](https://simg.nicepng.com/png/small/281-2819748_how-to-set-use-login-button-clipart-button.png)|
 
 
 
-##Paso 3
+## Paso 3
 **Agregar nuvas tareas**
 
 Nueva tarea |............
@@ -80,16 +81,16 @@ Nueva tarea |............
 
 **lista de tareas**
 
-| id | Tarea  | Accion|............
-|----------|------------|------|
-|3| tarea 3 |editar|eliminar
-|2| tarea 2 |editar |eliminar
-| 1|tarea 1 | editar |eliminar
+| id | Tarea  | Accion|............|
+|---------|----------|---|-----|
+|3| tarea 3 |editar|eliminar|
+|2| tarea 2 |editar |eliminar|
+| 1|tarea 1 | editar |eliminar|
 
+---
+## Directorio de Archivos
 
-##Directorio de Archivos
-
-###Proyecto001
+### Proyecto001
 
 - [ ]agregar.html
 - [ ]agregar.php
@@ -108,4 +109,4 @@ Nueva tarea |............
 - [ ]stylelogin.css
 - [ ]styleregistro.css
 
-###End
+### End
