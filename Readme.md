@@ -81,7 +81,7 @@ Nueva tarea |............
 **lista de tareas**
 
 | id | Tarea  | Accion|............
-|----------:|------------|
+|----------|------------|
 |3| tarea 3 |editar|eliminar
 |2| tarea 2 |editar |eliminar
 | 1|tarea 1 | editar |eliminar
